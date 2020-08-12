@@ -12,41 +12,44 @@ export class LoanService {
     constructor(private http: HttpClient) {}
 
     fetchLoans() {
-        return this.http
-      .get<Loan[]>(
-        'https://ng-course-recipe-book-65f10.firebaseio.com/recipes.json'
-      )
-      .pipe(
-        map(loans => {
-          return loans.map(loan => {
-            return {
-              ...loan
-            };
-          });
-        }),
-        tap(loans => {
+        console.log("SAF: LoanServie - fetchLoans() called");
+        this.http.get<Loan[]>('http://localhost:8042/loans').subscribe(loans => {
+            console.log(loans);
+            this.loans = loans;
             this.loansChanged.next(this.loans.slice());
-        })
-      );
-        
+        });
+    //     return this.http
+    //   .get<Loan[]>(
+    //     'http://localhost:8042/loans'
+    //   )
+    //   .pipe(
+    //     map(loans => {
+    //         console.log(loans);
+    //       return loans.map(loan => {
+    //         return {
+    //           ...loan
+    //         };
+    //       });
+    //     }),
+    //     tap(loans => {
+    //         this.loansChanged.next(this.loans.slice());
+    //     })
+    //   );
     }
 
     addLoan(loan: Loan) {
-        
         this.http
         .post(
-            'https://ng-course-recipe-book-65f10.firebaseio.com/recipes.json',
+            'http://localhost:8042/loans',
             loan
         )
         .subscribe(response => {
             console.log(response);
             this.fetchLoans();
         });
-
     }
 
     modifyLoan(loan: Loan) {
-        
         this.http
         .put(
             'https://ng-course-recipe-book-65f10.firebaseio.com/recipes.json',

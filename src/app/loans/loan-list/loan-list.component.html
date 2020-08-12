@@ -1,1 +1,20 @@
-<p>loan-list works!</p>
+<div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-success" (click)="onNewLoan()">New Loan</button>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+        Loan List
+        <app-loan-list-item
+        *ngFor="let loanEl of loans; let i = index"
+        [loan]="loanEl"
+        [index]="i">
+
+        </app-loan-list-item>
+        <!-- <ul>
+            <li *ngFor="let loanEl of loans; let i = index">{{loanEl.loanId}}</li>
+        </ul> -->
+    </div>
+  </div>

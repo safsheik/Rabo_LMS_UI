@@ -12,6 +12,8 @@ import { LoanListComponent } from './loans/loan-list/loan-list.component';
 import { LoanModifyComponent } from './loans/loan-modify/loan-modify.component';
 import { LoanStartComponent } from './loans/loan-start/loan-start.component';
 import { LoanDetailsComponent } from './loans/loan-details/loan-details.component';
+import { LoanService } from './loans/loan.service';
+import { LoanListItemComponent } from './loans/loan-list/loan-list-item/loan-list-item.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { LoanDetailsComponent } from './loans/loan-details/loan-details.componen
     LoanListComponent,
     LoanModifyComponent,
     LoanStartComponent,
-    LoanDetailsComponent
+    LoanDetailsComponent,
+    LoanListItemComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,7 @@ import { LoanDetailsComponent } from './loans/loan-details/loan-details.componen
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [LoanService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

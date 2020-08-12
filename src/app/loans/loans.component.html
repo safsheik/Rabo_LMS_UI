@@ -1,1 +1,49 @@
-<p>loans works!</p>
+<div class="row">
+    <div class="col-md-12">
+        <form #seachForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="form-group">
+                      <label for="searchby">Search By</label>
+                      <input
+                        type="text"
+                        id="searchby"
+                        ngModel
+                        name="searchby"
+                        class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-xs-4">
+                    <div class="form-group">
+                      <label for="searchtext">Search Text</label>
+                      <input
+                        type="text"
+                        id="searchtext"
+                        ngModel
+                        name="searchtext"
+                        class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-xs-4">
+                    <div class="form-group">
+                        <button
+                        type="submit"
+                        class="btn btn-success"
+                        >Search</button>
+                      <button type="button" class="btn btn-danger" >Cancel</button>
+                    </div>
+                  </div>
+              </div>
+        </form>
+
+    </div>
+  </div>
+<div class="row">
+    <div class="col-md-5">
+      <app-loan-list></app-loan-list>
+    </div>
+    <div class="col-md-7">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  

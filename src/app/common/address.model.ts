@@ -1,5 +1,5 @@
-export class LoanAddress {
-    constructor(private city:string, private address:string) {
+export class PropertyAddress {
+    constructor(private propertyId:string, private city:string, private address:string) {
 
     }
 }
