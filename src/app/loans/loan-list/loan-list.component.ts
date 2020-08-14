@@ -29,6 +29,10 @@ export class LoanListComponent implements OnInit {
     this.loanService.fetchLoans();
   }
 
+  fetchAllLoans() {
+    this.loanService.fetchLoans();
+  }
+
   onNewLoan() {
 
   }

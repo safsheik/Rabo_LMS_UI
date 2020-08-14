@@ -1,5 +1,5 @@
 export class PropertyAddress {
-    constructor(private propertyId:string, private city:string, private address:string) {
+    constructor(public propertyId:number, public city:string, public address:string) {
 
     }
 }

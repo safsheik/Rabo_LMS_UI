@@ -38,26 +38,34 @@ export class LoanService {
     }
 
     addLoan(loan: Loan) {
-        this.http
-        .post(
-            'http://localhost:8042/loans',
-            loan
-        )
-        .subscribe(response => {
-            console.log(response);
-            this.fetchLoans();
-        });
+        console.log("SAF: inside loanService: addLoan");
+        console.log(loan);
+        // this.http
+        // .post(
+        //     'http://localhost:8042/loans',
+        //     loan
+        // )
+        // .subscribe(response => {
+        //     console.log(response);
+        //     this.fetchLoans();
+        // });
     }
 
-    modifyLoan(loan: Loan) {
-        this.http
-        .put(
-            'https://ng-course-recipe-book-65f10.firebaseio.com/recipes.json',
-            loan
-        )
-        .subscribe(response => {
-            console.log(response);
-            this.fetchLoans();
-        });
+    modifyLoan(index: number, loan: Loan) {
+        console.log("SAF: inside loanService: modifyLoan");
+        console.log(loan);
+        // this.http
+        // .put(
+        //     'https://ng-course-recipe-book-65f10.firebaseio.com/recipes.json',
+        //     loan
+        // )
+        // .subscribe(response => {
+        //     console.log(response);
+        //     this.fetchLoans();
+        // });
     }
+
+    getLoanByIndex(index: number) {
+        return this.loans[index];
+      }
 }

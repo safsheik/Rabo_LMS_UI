@@ -1,1 +1,76 @@
-<p>loan-details works!</p>
+<div class="row">
+    <div class="col-xs-12">
+      <h1>Loan Details:</h1>
+    </div>
+  </div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="pull-left">
+            <h3 class="list-group-item-heading">Loan Id:</h3>
+          </div>
+          <div class="pull-right">
+            <p class="list-group-item-text">{{ loan.loanId }}</p>
+            <!-- <p class="list-group-item-text">{{ loan.amount }}</p> -->
+          </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="pull-left">
+            <h3 class="list-group-item-heading">Loan UserId:</h3>
+          </div>
+          <div class="pull-right">
+            <p class="list-group-item-text">{{ loan.loanUser }}</p>
+            <!-- <p class="list-group-item-text">{{ loan.amount }}</p> -->
+          </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="pull-left">
+            <h3 class="list-group-item-heading">Loan Amount: </h3>
+          </div>
+          <div class="pull-right">
+            <p class="list-group-item-text">{{ loan.amount }}</p>
+            <!-- <p class="list-group-item-text">{{ loan.amount }}</p> -->
+          </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="pull-left">
+            <h3 class="list-group-item-heading">Loan Property Details:</h3>
+            <div class="row">
+                <div class="col-xs-6">
+                    <h4 class="list-group-item-heading">City: </h4>
+                  <p class="list-group-item-text">{{ loan.propertyAddress.city }}</p>
+                  <!-- <p class="list-group-item-text">{{ loan.amount }}</p> -->
+                </div>
+                <div class="col-xs-6">
+                    <h4 class="list-group-item-heading">Address: </h4>
+                  <p class="list-group-item-text">{{ loan.propertyAddress.address }}</p>
+                  <!-- <p class="list-group-item-text">{{ loan.amount }}</p> -->
+                </div>
+              </div>
+          </div>
+          
+          <!-- <div class="pull-right">
+              <h4 class="list-group-item-heading">City: </h4>
+            <p class="list-group-item-text">{{ loan.propertyAddress.city }}</p>
+            <p class="list-group-item-text">{{ loan.amount }}</p>
+          </div> -->
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+      <button
+        class="btn btn-warning"
+        type="button"
+        (click)="onModify()">Modify</button>|
+      <button
+        class="btn btn-danger"
+        type="button"
+        (click)="onDelete()">Delete</button> |
+      <button class="btn btn-info" type="button" (click)="onCancel()">Cancel</button>
+    </div>
+  </div>
